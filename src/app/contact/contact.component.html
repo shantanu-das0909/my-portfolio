@@ -1,0 +1,137 @@
+<div class="container">
+  <div class="row">
+    <!-- left column  -->
+    <div class="col-lg-8 left-column">
+      <!-- contact header -->
+      <div class="contact-header">
+        <i class="fa-solid fa-paper-plane"></i> &nbsp; Want to get in touch?
+      </div>
+
+      <form
+        #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
+        class="col-lg-8 offset-lg-1"
+        autocomplete="off"
+      >
+        <!-- name field -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+            ngModel
+            #name="ngModel"
+          />
+          <span class="error-msg" *ngIf="!name.valid && name.touched"
+            >Please enter a valid name</span
+          >
+          <span class="help-msg" *ngIf="name.valid && name.touched"
+            >Name is valid</span
+          >
+        </div>
+
+        <!-- email field -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            email
+            ngModel
+            #email="ngModel"
+          />
+          <span class="error-msg" *ngIf="!email.valid && email.touched"
+            >Please enter a valid email</span
+          >
+          <span class="help-msg" *ngIf="email.valid && email.touched"
+            >Email is valid</span
+          >
+        </div>
+
+        <!-- textarea field -->
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            rows="3"
+            class="form-control"
+            id="message"
+            name="message"
+            placeholder="Enter your message"
+            required
+            ngModel
+            #message="ngModel"
+          ></textarea>
+          <span class="error-msg" *ngIf="!message.valid && message.touched"
+            >Please enter a valid message</span
+          >
+        </div>
+
+        <!-- send/submit button -->
+        <button
+          class="btn btn-primary custom-button"
+          type="submit"
+          [disabled]="!f.valid"
+        >
+          Send
+        </button>
+
+        <!-- confirmation messsage -->
+        <div *ngIf="sendMessage" class="sent">
+          <div class="sent-message">Message is sent successfully !</div>
+          <div class="cross">
+            <button class="cross-button" (click)="removeSentMessage()">
+              &#x2715;
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- right column -->
+    <div class="col-lg-4 right-column">
+      <!-- contact header -->
+      <div class="details-header">
+        <i class="fa-solid fa-circle-info"></i> &nbsp; More Details
+      </div>
+      <div class="links">
+        <p class="location">
+          <i class="fa-solid fa-location-pin"></i> &nbsp; Kolkata, West Bengal
+        </p>
+        <p class="email">
+          <i class="fa-solid fa-envelope"></i> &nbsp; shantanu.das0909@gmail.com
+        </p>
+
+        <div class="icons">
+          <a
+            href="https://www.linkedin.com/in/shantanu-das-a753481b7/"
+            target="_blank"
+            ><button class="icon linkedin custom-button">
+              <i class="fa-brands fa-linkedin-in"></i>&nbsp;&nbsp; Linkedin
+            </button></a
+          >
+          <a href="https://github.com/shantanu-das0909" target="_blank">
+            <button class="icon github custom-button">
+              <i class="fa-brands fa-github"></i>&nbsp;&nbsp; Github
+            </button></a
+          >
+        </div>
+
+        <div class="resume">
+          <a href="../../assets/pdf/resume.pdf" download="resume.pdf">
+            <button class="custom-button icon">
+              <i class="fa-solid fa-download"></i> &nbsp; Resume
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
