@@ -2,9 +2,11 @@
   text-align: center;
   margin-bottom: 3rem;
   margin-top: -1rem;
+  animation: zero-to-one var(--animation-time-header) linear forwards;
+  scale: 0;
 }
-
 .qualification {
+  margin-top: 2%;
   font-size: 1.1rem;
   line-height: 0.1rem;
   color: var(--green-color);
@@ -75,16 +77,6 @@
   }
 }
 
-/* .left-column {
-  background: blue;
-}
-.middle-column {
-  background: red;
-}
-.right-column {
-  background: green;
-} */
-
 .skills {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -101,4 +93,55 @@
   text-align: center;
   padding: 0.5em;
   border-radius: 10px;
+}
+
+.row {
+  opacity: 0;
+  transform: translateY(15%);
+  animation: swing var(--animation-time-columns) var(--animation-delay-columns)
+    linear forwards;
+}
+@keyframes swing {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  20% {
+    transform: translateY(-10%);
+  }
+  40% {
+    transform: translateY(10%);
+  }
+  60% {
+    transform: translateY(-5%);
+  }
+  80% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zero-to-one {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+* {
+  --animation-time-header: 500ms;
+  --animation-time-columns: 500ms;
+  --animation-delay-columns: calc(var(--animation-time-header) + 100ms);
+}
+.container {
+  overflow: hidden;
+  margin-top: 2%;
 }

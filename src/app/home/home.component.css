@@ -11,6 +11,9 @@
   }
 }
 
+.cont {
+  margin-top: 3%;
+}
 .hi {
   font-size: 3rem;
 }
@@ -86,20 +89,27 @@
 
   box-shadow: 0 0 5px 2px white;
   /* rotate: -10deg; */
-  transition: all 0.3s linear;
-}
-
-.profile-img:hover {
-  scale: 1.1;
-}
-
-.pulse {
+  /* transition: all 0.3s linear; */
   cursor: pointer;
+  scale: 0;
   box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-  animation: pulse 1.5s infinite;
+  animation: zero-to-one 600ms linear forwards, pulse 1.5s 700ms infinite;
 }
-.pulse:hover {
-  animation: none;
+
+/* .pulse {
+} */
+/* .pulse:hover {
+} */
+@keyframes zero-to-one {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 @keyframes pulse {

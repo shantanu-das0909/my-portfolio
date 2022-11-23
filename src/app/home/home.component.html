@@ -1,48 +1,50 @@
-<div class="row">
-  <div class="col-md-6 first-column">
-    <div class="hi-iam">
-      <span class="hi">Hi, </span><span class="iam">i am</span>
-    </div>
-    <div class="name line anim-typewritter">{{ name }}</div>
-    <div class="post">{{ developer }}</div>
-    <div class="intro">{{ intro }}</div>
+<div class="cont">
+  <div class="row">
+    <div class="col-md-6 first-column">
+      <div class="hi-iam">
+        <span class="hi">Hi, </span><span class="iam">i am</span>
+      </div>
+      <div class="name line anim-typewritter">{{ name }}</div>
+      <div class="post">{{ developer }}</div>
+      <div class="intro">{{ intro }}</div>
 
-    <div class="icons">
-      <a
-        href="https://www.linkedin.com/in/shantanu-das-a753481b7/"
-        target="_blank"
-        ><button class="icon linkedin">
-          <i class="fa-brands fa-linkedin-in"></i></button
-      ></a>
-      <a href="https://github.com/shantanu-das0909" target="_blank">
-        <button class="icon github">
-          <i class="fa-brands fa-github"></i></button
-      ></a>
-      <a href="mailto: shantanu.das0909@gmail.com">
-        <button class="icon email">
-          <i class="fa-solid fa-envelope"></i>
-        </button>
-      </a>
+      <div class="icons">
+        <a
+          href="https://www.linkedin.com/in/shantanu-das-a753481b7/"
+          target="_blank"
+          ><button class="icon linkedin">
+            <i class="fa-brands fa-linkedin-in"></i></button
+        ></a>
+        <a href="https://github.com/shantanu-das0909" target="_blank">
+          <button class="icon github">
+            <i class="fa-brands fa-github"></i></button
+        ></a>
+        <a href="mailto: shantanu.das0909@gmail.com">
+          <button class="icon email">
+            <i class="fa-solid fa-envelope"></i>
+          </button>
+        </a>
+      </div>
+
+      <div class="about-button">
+        <a
+          [routerLink]="['../', 'about']"
+          style="text-decoration: none; color: white"
+        >
+          <button class="custom-button">Know me &nbsp; &rarr;</button></a
+        >
+      </div>
     </div>
 
-    <div class="about-button">
-      <a
-        [routerLink]="['../', 'about']"
-        style="text-decoration: none; color: white"
-      >
-        <button class="custom-button">Know me &nbsp; &rarr;</button></a
-      >
-    </div>
-  </div>
-
-  <div class="col-md-4 second-column">
-    <img src="../assets/img/my.jpg" alt="logo" class="pulse profile-img" />
-    <div class="resume">
-      <a href="../../assets/pdf/resume.pdf" download="resume.pdf">
-        <button class="custom-button">
-          <i class="fa-solid fa-download"></i> &nbsp; Resume
-        </button>
-      </a>
+    <div class="col-md-4 second-column">
+      <img src="../assets/img/my.jpg" alt="logo" class="pulse profile-img" />
+      <div class="resume">
+        <a href="../../assets/pdf/resume.pdf" download="resume.pdf">
+          <button class="custom-button">
+            <i class="fa-solid fa-download"></i> &nbsp; Resume
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </div>
