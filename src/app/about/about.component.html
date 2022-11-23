@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="about-header">
+    <p class="qualification">My Qualification, Experience and Skills</p>
+    <p class="journey">Awesome Journey</p>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 left-column">
+      <div class="education-header">
+        <i class="fa-solid fa-graduation-cap"></i> &nbsp; Education
+      </div>
+
+      <div class="educations mt-5">
+        <div class="education" *ngFor="let education of educations">
+          <div class="row">
+            <div class="col-lg-1">
+              <span><i class="fa-solid fa-star"></i></span>
+            </div>
+            <div class="col-lg-9">
+              <p class="degree">{{ education.degree }}</p>
+              <p class="college">{{ education.college }}</p>
+              <p class="year">
+                <i class="fa-solid fa-calendar-days"></i> &nbsp;
+                {{ education.year }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 middle-column">
+      <div class="experience-header">
+        <i class="fa-solid fa-briefcase"></i> &nbsp; Experience
+      </div>
+
+      <div class="experiences mt-5">
+        <div class="experience" *ngFor="let experience of experiences">
+          <div class="row">
+            <div class="col-lg-1">
+              <span><i class="fa-solid fa-star"></i></span>
+            </div>
+            <div class="col-lg-9">
+              <p class="post">{{ experience.post }}</p>
+              <p class="comapny">{{ experience.company }}</p>
+              <p class="year">
+                <i class="fa-solid fa-calendar-days"></i> &nbsp;
+                {{ experience.year }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 right-column">
+      <div class="skill-header">
+        <i class="fa-solid fa-link"></i> &nbsp; Skills
+      </div>
+
+      <div class="skills mt-5">
+        <div class="skill" *ngFor="let skill of skills">{{ skill }}</div>
+      </div>
+    </div>
+  </div>
+</div>

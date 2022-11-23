@@ -1,0 +1,68 @@
+<div class="conatiner">
+  <!-- project header -->
+  <div class="project-header">
+    <i class="fa-solid fa-layer-group"></i> &nbsp; Projects
+  </div>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-lg-5 left-column">
+      <div class="projects">
+        <div
+          class="project card mb-3 me-3"
+          *ngFor="let project of projects"
+          (click)="displayDetails(project)"
+          [ngClass]="{ 'scale-down': project.id === selectedProject.id }"
+        >
+          <img src="{{ project.imagePath }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <p class="card-title">{{ project.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- right column -->
+    <div class="col-lg-5 right-column">
+      <div class="project-desc-header">
+        <i class="fa-solid fa-circle-info"></i> &nbsp;
+        {{ selectedProject.name }}
+      </div>
+      <div class="project-desc-content">
+        <div class="row">
+          <div class="col-md-8">
+            <img
+              class="project-image"
+              src="{{ selectedProject.imagePath }}"
+              alt="{{ selectedProject.name }}"
+            />
+          </div>
+          <div class="col-md-4">
+            <div class="project-links">
+              <a href="{{ selectedProject.githubLink }}" target="_blank">
+                <button class="custom-button github mb-3">
+                  <i class="fa-brands fa-github"></i> &nbsp; Github
+                </button>
+              </a>
+              <a href="{{ selectedProject.projectLink }}" target="_blank">
+                <button class="custom-button view-project mb-3">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp;
+                  Project
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-description mt-5">
+          {{ selectedProject.description }}
+        </div>
+
+        <div class="keywords">
+          <div class="keyword" *ngFor="let keyword of selectedProject.keywords">
+            {{ keyword }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
